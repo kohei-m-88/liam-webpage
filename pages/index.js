@@ -1,19 +1,30 @@
 import Head from 'next/head'
+import HeaderBanner from '../components/HeaderBanner'
 import styles from '../styles/Home.module.css'
-import Footer from '../components/footer.js'
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>LiamLongo.org</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {/* ↓tailwindテスト
+      <div className="hero">
+        <h1 className="title">Next.js + Tailwind CSS 🐼</h1>
+        <p className="text-center text-teal-500 text-2xl py-4">This is an Example.</p>
+      </div> */}
+
+      <HeaderBanner banner="A" />
+
+        <div className="flex flex-row ">
+          <button>Home</button>
+          <button>About Me</button>
+          <button>Research</button>
+          <button>CV</button>
+        </div>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
 
         <p className={styles.description}>
           Get started by editing{' '}
@@ -50,8 +61,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-
-      <Footer className={styles.footer} />
     </div>
   )
 }

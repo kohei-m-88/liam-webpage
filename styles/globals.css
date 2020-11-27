@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+
 html,
 body {
   padding: 0;
@@ -14,3 +17,20 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* ↓テスト カスタマイズしたクラスは「@tailwind urilities」の上  */
+/* .btn-blue {
+  @apply bg-blue-500 font-bold py-2 px-4 rounded;
+}
+
+.hero {
+  @apply py-20;
+}
+
+.title {
+  @apply text-5xl;
+  color: #333;
+  line-height: 1.15;
+} */
+
+@tailwind utilities;
