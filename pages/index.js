@@ -1,66 +1,50 @@
 import Head from 'next/head'
 import HeaderBanner from '../components/HeaderBanner'
+import HeaderMenu from '../components/HeaderMenu'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
+
       <Head>
         <title>LiamLongo.org</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* ↓tailwindテスト
-      <div className="hero">
-        <h1 className="title">Next.js + Tailwind CSS 🐼</h1>
-        <p className="text-center text-teal-500 text-2xl py-4">This is an Example.</p>
-      </div> */}
+      <body>
+          <HeaderBanner banner="A" />
 
-      <HeaderBanner banner="A" />
+          <HeaderMenu homeActive="text-gray-100 bg-gray-900" aboutMeHover="hover:bg-gray-300" researchHover="hover:bg-gray-300" cvHover="hover:bg-gray-300" />
 
-        <div className="flex flex-row ">
-          <button>Home</button>
-          <button>About Me</button>
-          <button>Research</button>
-          <button>CV</button>
-        </div>
-      <main className={styles.main}>
+        <main>
+          <div className="mx-2 px-2 max-w-screen-sm">
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+            <p className='my-1 py-1 text-3xl text-gray-800'>Recent News</p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+            <article>
+              <section>
+                <span>Heading</span>
+                <span>date</span>
+              </section>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+              <section>
+                <section>
+                  <title>thesis paper</title>
+                  <p>authors</p>
+                </section>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+                <section>
+                  <img src="#"/>
+                  <p>本文</p>
+                </section>
+              </section>
+
+            </article>
+          </div>
+        </main>
+      </body>
     </div>
   )
 }
