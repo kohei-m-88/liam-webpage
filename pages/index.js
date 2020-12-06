@@ -2,7 +2,6 @@ import Head from 'next/head'
 import HeaderBanner from '../components/HeaderBanner'
 import HeaderMenu from '../components/HeaderMenu'
 import NewsContent from '../components/NewsContent'
-import NewsHeading from '../components/NewsHeading'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -28,7 +27,7 @@ export default function Home() {
 
             <article>
               <section>
-                {/* <span>Heading </span>
+               {/* <span>Heading </span>
                 <span>date</span> */}
               </section>
 
@@ -51,3 +50,4 @@ export default function Home() {
     </>
   )
 }
+
