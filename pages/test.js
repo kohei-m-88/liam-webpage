@@ -1,14 +1,21 @@
 import format from 'date-fns/format'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-export default function NewsHeading({posts}) {
+export default function NewsHeading({ posts }) {
   return (
     <>
       {posts.map(post => (
         <div>
           <span>{post.heading}</span>
           <span>{format(new Date(post.date), 'LLL yyyy')}</span>
-          <div>{documentToReactComponents(post.articlecontent.json)}<br /></div>
+          <div>
+            <div>
+              <div>{post.thesisTitle}</div>
+              <div>{post.author}</div>
+            </div>
+            <span><img src={post.image.url} /></span>
+            <span>{documentToReactComponents(post.articlecontent.json)}</span>
+          </div>
         </div>
       ))}
     </>
@@ -38,6 +45,9 @@ export async function getStaticProps() {
             items {
               heading
               date
+              thesisTitle
+              author
+              image { url }
               articlecontent { json }
             }
           }
