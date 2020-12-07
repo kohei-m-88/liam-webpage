@@ -2,12 +2,15 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 // import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 
-export default function Testy({ posts }) {
+export default function Testy( {posts} ) {
   return (
     <>
+    {posts.map(post =>
       <div>
-        {documentToReactComponents(posts.articlecontent.json)}
+        {documentToReactComponents(post.articlecontent.json)}
+        <br />
       </div>
+      )}
     </>
   )
 }
@@ -47,7 +50,7 @@ export async function getStaticProps() {
   const { data } = await res.json()
   return {
     props: {
-      posts: data.newsCollection.items[0]
+      posts: data.newsCollection.items
     },
   }
 }
