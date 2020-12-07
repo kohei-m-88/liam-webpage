@@ -5,16 +5,9 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 export default function Testy({ posts }) {
   return (
     <>
-
-      {posts.map(post => (
-        post.articlecontent.map(text => (
-          <div>
-            {documentToReactComponents(text.json)}
-          </div>
-
-        ))
-      ))
-      }
+      <div>
+        {documentToReactComponents(posts.articlecontent.json)}
+      </div>
     </>
   )
 }
@@ -54,7 +47,7 @@ export async function getStaticProps() {
   const { data } = await res.json()
   return {
     props: {
-      posts: data.newsCollection.items
+      posts: data.newsCollection.items[0]
     },
   }
 }
