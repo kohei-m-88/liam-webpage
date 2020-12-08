@@ -1,4 +1,4 @@
-import styles from './HeaderBanner.module.css'
+import styles from './headerBanner.module.css'
 
 export default function HeaderBanner(props) {
   return(
