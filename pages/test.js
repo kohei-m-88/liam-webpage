@@ -10,11 +10,15 @@ export default function NewsHeading({ posts }) {
           <span>{format(new Date(post.date), 'LLL yyyy')}</span>
           <div>
             <div>
-              <div>{post.thesisTitle}</div>
+              <div>{post.thesisPaperTitle}</div>
+              <div>[<a href={post.thesisPaperLink}>Link</a>]</div>
               <div>{post.author}</div>
+              <div>{post.subTitle}</div>
             </div>
-            <span><img src={post.image.url} /></span>
-            <span>{documentToReactComponents(post.articlecontent.json)}</span>
+            <div>
+              <span><img src={post.image?.url} /></span>
+              <span>{documentToReactComponents(post.articlecontent.json)}</span>
+            </div>
           </div>
         </div>
       ))}
@@ -39,20 +43,21 @@ export async function getStaticProps() {
       // send the query we wrote in GraphiQL as a string
       body: JSON.stringify({
         // all requests start with "query: ", so we'll stringify that for convenience
-        query: `
-        {
-          newsCollection{
+        query:
+          `{
+          newsArticlesCollection ( order: [date_DESC] )  {
             items {
               heading
               date
-              thesisTitle
+              thesisPaperTitle
+              thesisPaperLink
               author
-              image { url }
+              subTitle
+              image { url } 
               articlecontent { json }
             }
           }
-        }
-              `
+        }`
       })
     }
   );
@@ -60,7 +65,7 @@ export async function getStaticProps() {
   const { data } = await res.json()
   return {
     props: {
-      posts: data.newsCollection.items
+      posts: data.newsArticlesCollection.items
     },
   }
 }
