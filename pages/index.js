@@ -12,7 +12,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <body>
           <HeaderBanner banner="A" />
 
           <HeaderMenu homeActive="text-gray-100 bg-gray-900" aboutMeHover="hover:bg-gray-300" researchHover="hover:bg-gray-300" cvHover="hover:bg-gray-300" />
@@ -46,7 +45,6 @@ export default function Home() {
             </article>
           </div>
         </main>
-      </body>
     </>
   )
 }
