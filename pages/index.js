@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import HeaderBanner from '../components/headerBanner'
-import HeaderMenu from '../components/headerMenu'
-import NewsContent from '../components/newsContent'
+import HeaderMenu from '../components/headermenu'
+import NewsContent from '../components/newscontent'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {

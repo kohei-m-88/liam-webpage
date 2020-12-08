@@ -1,4 +1,4 @@
-import HeaderBanner from '../components/HeaderBanner'
+import HeaderBanner from '../components/headerBanner'
 
 export default function about() {
   return (
