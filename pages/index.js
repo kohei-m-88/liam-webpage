@@ -3,6 +3,7 @@ import HeaderBanner from '../components/headerBanner'
 import HeaderMenu from '../components/headermenu'
 import NewsContent from '../components/newscontent'
 import styles from '../styles/Home.module.css'
+import Footer from "../components/footer"
 
 export default function Home() {
   return (
@@ -12,9 +13,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-          <HeaderBanner banner="A" />
+      <body>
+        <HeaderBanner banner="A" />
 
-          <HeaderMenu homeActive="text-gray-100 bg-gray-900" aboutMeHover="hover:bg-gray-300" researchHover="hover:bg-gray-300" cvHover="hover:bg-gray-300" />
+        <HeaderMenu homeActive="text-gray-100 bg-gray-900" aboutMeHover="hover:bg-gray-300" researchHover="hover:bg-gray-300" cvHover="hover:bg-gray-300" />
 
         <main>
 
@@ -26,7 +28,7 @@ export default function Home() {
 
             <article>
               <section>
-               {/* <span>Heading </span>
+                {/* <span>Heading </span>
                 <span>date</span> */}
               </section>
 
@@ -37,7 +39,7 @@ export default function Home() {
                 </section>
 
                 <section>
-                  <img src="#"/>
+                  <img src="#" />
                   <p>本文</p>
                 </section>
               </section>
@@ -45,6 +47,9 @@ export default function Home() {
             </article>
           </div>
         </main>
+      </body>
+
+      <Footer />
     </>
   )
 }
