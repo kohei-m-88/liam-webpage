@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Footer from "./footer"
+// import Footer from "./footer"
 
 export default function Layout({ children, title = 'LiamLongo.org' }) {
   return (
@@ -11,7 +11,7 @@ export default function Layout({ children, title = 'LiamLongo.org' }) {
 
     {children}
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
