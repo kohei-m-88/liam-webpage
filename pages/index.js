@@ -1,26 +1,16 @@
-import Head from 'next/head'
+import Layout from '../components/layout'
 import HeaderBanner from '../components/headerBanner'
 import HeaderMenu from '../components/headermenu'
-import NewsContent from '../components/newscontent'
-import styles from '../styles/Home.module.css'
-import Footer from "../components/footer"
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>LiamLongo.org</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Layout>
 
-      <body>
         <HeaderBanner banner="A" />
+        <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
 
-        <HeaderMenu homeActive="text-gray-100 bg-gray-900" aboutMeHover="hover:bg-gray-300" researchHover="hover:bg-gray-300" cvHover="hover:bg-gray-300" />
-
-        <main>
-
-          {/* <NewsContent /> */}
+        
 
           <div className="mx-2 px-2 max-w-screen-sm">
             <p className='my-1 py-1 text-3xl text-gray-800'>Recent News</p>
@@ -46,10 +36,8 @@ export default function Home() {
 
             </article>
           </div>
-        </main>
-      </body>
-
-      <Footer />
+      
+      </Layout>
     </>
   )
 }

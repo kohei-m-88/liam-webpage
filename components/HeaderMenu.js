@@ -1,16 +1,27 @@
 import { SiTwitter, SiGooglescholar, SiLinkedin, SiResearchgate, SiOrcid } from 'react-icons/si'
 // import { RiLinkedinFill } from 'react-icons/ri'
 
-export default function HeaderMenu(props) {
+//hoverには初期値を入れておく  参考 https://github.com/vercel/next.js/blob/canary/examples/layout-component/components/layout.js
+export default function HeaderMenu(
+  {
+    homeHover = 'hover:bg-gray-300',
+    homeActive = '',
+    aboutMeHover = 'hover:bg-gray-300',
+    aboutMeActive = '',
+    researchHover = 'hover:bg-gray-300',
+    researchActive = '',
+    cvHover = 'hover:bg-gray-300'
+  }) 
+  {
   return (
 
     <nav className="flex w-full border-2 border-black justify-between items-center">
       {/* left-side Menu */}
       <span>
-        <button className={`text-xl font-semibold p-3 ${props.homeHover} ${props.homeActive}`}>Home</button>
-        <button className={`text-xl font-semibold p-3 ${props.aboutMeHover} ${props.aboutMeActive}`}>About Me</button>
-        <button className={`text-xl font-semibold p-3 ${props.researchHover} ${props.researchActive}`}>Research</button>
-        <button className={`text-xl font-semibold p-3 ${props.cvHover} ${props.cvActive}`}>CV</button>
+        <button className={`text-xl font-semibold p-3 ${homeHover} ${homeActive}`}>Home</button>
+        <button className={`text-xl font-semibold p-3 ${aboutMeHover} ${aboutMeActive}`}>About Me</button>
+        <button className={`text-xl font-semibold p-3 ${researchHover} ${researchActive}`}>Research</button>
+        <button className={`text-xl font-semibold p-3 ${cvHover}`}>CV</button>
       </span>
 
       {/* right-side Menu */}
