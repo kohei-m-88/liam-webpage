@@ -1,7 +1,13 @@
+import Layout from '../components/layout'
 import HeaderBanner from '../components/headerBanner'
+import HeaderMenu from '../components/headermenu'
 
 export default function research() {
   return (
-    <HeaderBanner banner="C" />
+    <Layout>
+      <HeaderBanner banner="C" />
+      <HeaderMenu researchHover="" researchActive="text-gray-100 bg-gray-900"/>
+
+    </Layout>
   )
 }
