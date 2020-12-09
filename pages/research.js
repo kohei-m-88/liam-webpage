@@ -1,6 +1,6 @@
 import Layout from '../components/layout'
 import HeaderBanner from '../components/headerBanner'
-import HeaderMenu from '../components/headermenu'
+import HeaderMenu from '../components/headerMenu'
 
 export default function research() {
   return (
