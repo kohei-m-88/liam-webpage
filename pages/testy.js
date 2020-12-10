@@ -26,7 +26,7 @@ export async function getStaticProps() {
     method: 'POST', // GraphQL *always* uses POST requests!
     headers: {
       'Content-type': 'application/json',
-      Authorization: `Bearer ${accessToken}`, // add our access token header
+      Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`, // add our access token header
     },
     // send the query we wrote in GraphiQL as a string
     body: JSON.stringify({
