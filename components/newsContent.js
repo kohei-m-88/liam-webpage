@@ -1,13 +1,12 @@
-// import React from 'react'
-// import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-// export default function NewsContent({acontent}) {
-//   return (
-//   <>
-//     {documentToReactComponents(acontent)}
-//   </>
-//   )
-// }
+export default function NewsContent({nAContent}) {
+  return (
+  <>
+    {documentToReactComponents(nAContent)}
+  </>
+  )
+}
 
 // export async function getStaticProps() {
 //   // first, grab our Contentful keys from the .env file
@@ -42,7 +41,7 @@
 //   const data = await res.json();
 //   return {
 //     props: {
-//     acontent: data.newsCollection.items,
+//     nAs: data.newsCollection.items,
 //     }
 //   }
 // }
