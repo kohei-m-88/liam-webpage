@@ -1,5 +1,4 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-// import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 //postsは配列だが、{}で囲んで分割代入
 export default function Testy( {posts} ) {
