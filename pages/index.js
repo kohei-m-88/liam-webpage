@@ -1,11 +1,11 @@
 import Layout from '../components/layout'
-// import HeaderBanner from '../components/headerBanner'
+import HeaderBanner from '../components/headerBanner'
 // import HeaderMenu from '../components/headerMenu'
 
 export default function Home() {
   return (
     <Layout>
-      {/* <HeaderBanner banner="A" /> */}
+      <HeaderBanner banner="A" />
       {/* <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" /> */}
 
 
