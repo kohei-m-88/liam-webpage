@@ -4,6 +4,7 @@ import HeaderMenu from '../components/headerMenu'
 import RecentNews from '../components/recentNews'
 import NewsHeading from '../components/newsHeading'
 import NewsContent from '../components/newsContent'
+import NewsContentPic from '../components/newsContentPic'
 import { getAllPostsForHome } from '../lib/api'
 
 export default function Home({ allPosts }) {
@@ -19,6 +20,7 @@ export default function Home({ allPosts }) {
         {allPosts.map(allPost => (
           <div>
             <NewsHeading nAHeading={allPost.heading} nADate={allPost.date} />
+            <NewsContentPic nAI={allPost?.image?.url} />
             <NewsContent nAContent={allPost.articlecontent.json} />
             {allPosts.newsArticlesCo}
           </div>
