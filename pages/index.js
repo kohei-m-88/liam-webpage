@@ -20,7 +20,7 @@ export default function Home({ allPosts }) {
         {allPosts.map(allPost => (
           <div>
             <NewsHeading nAHeading={allPost.heading} nADate={allPost.date} />
-            <NewsContentPic nAI={allPost?.image?.url} />
+            <NewsContentPic nAI={allPost.image?.url} /> 
             <NewsContent nAContent={allPost.articlecontent.json} />
             {allPosts.newsArticlesCo}
           </div>
