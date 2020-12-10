@@ -1,6 +1,7 @@
 import Layout from '../components/layout'
 import HeaderBanner from '../components/headerBanner'
 import HeaderMenu from '../components/headerMenu'
+import RecentNews from '../components/recentNews'
 
 export default function Home() {
   return (
@@ -10,11 +11,12 @@ export default function Home() {
 
 
 
-      <div className="mx-2 px-2 max-w-screen-sm">
-        <p className='my-1 py-1 text-3xl text-gray-800'>Recent News</p>
-
+      <div className="mx-5vw my-2vh">
+        
+        <RecentNews />
 
         <article>
+          
           <section>
             {/* <span>Heading </span>
                 <span>date</span> */}

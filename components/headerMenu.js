@@ -16,6 +16,7 @@ export default function HeaderMenu(
   return (
 
     <nav className="flex w-full border-2 border-black justify-between items-center">
+      
       {/* left-side Menu */}
       <span>
         <button className={`text-xl font-semibold p-3 ${homeHover} ${homeActive}`}>Home</button>
