@@ -1,10 +1,10 @@
-import styles from './footer.module.css'
-// import Image from 'next/image'
+// import styles from './footer.module.css'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer>
-      <img src="/banner_bottom.png" alt="footer" className={styles.footer} />
-    </footer>
+      <Image src="/banner_bottom.png" alt="footer" 
+      width={1843} height={138}
+      layout="responsive" objectfir="contain" />
   )
 }

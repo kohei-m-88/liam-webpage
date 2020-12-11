@@ -1,7 +1,10 @@
-import styles from './headerBanner.module.css'
+import Image from 'next/image'
 
 export default function headerBanner(props) {
   return(
-    <img src={`/banner_${props.banner}.png`} className={styles.headerbanner} />
+    <Image src={`/banner_${props.banner}.png`} alt="header banner" quality={100}
+    width={1844} height={308}
+    layout="responsive" objectfit="contain"  
+    />
   )
 }
