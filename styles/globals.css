@@ -5,7 +5,47 @@
 @tailwind base;
 
 /* Write your own custom base styles here */
+@layer base {
+  /* h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  } */
+  a {
+    @apply text-blue-600 underline;
+  }
+  
+  @media screen and ( max-width: 639px ){
+    p {
+      @apply text-sm;
+    }
+  }
 
+  @media screen and ( min-width: 640px ) and ( max-width: 767px ){
+    p {
+      @apply text-base;
+    }
+  }
+  @media screen and ( min-width: 768px ) and ( max-width: 1024px){
+    p {
+      @apply text-xl;
+    }
+  }
+  @media screen and ( min-width:1025px ) and (max-width: 1280px){
+    p {
+      @apply text-2xl;
+    }
+  }
+  @media screen and ( min-width: 1281px ){
+    p {
+      @apply text-3xl;
+    }
+  }
+}
 
 /* Start purging... */
 /**
@@ -33,7 +73,6 @@ body {
 
 
 /* Your own custom utilities */
-
 
 /**
   * Use this directive to control where Tailwind injects the responsive

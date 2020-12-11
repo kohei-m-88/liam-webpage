@@ -23,7 +23,7 @@ export default function Home({ allPosts }) {
         <RecentNews />
 
         {allPosts.map(allPost => (
-          <div className="border-solid border-2 border-gray-800 mb-6">
+          <div className="border-solid border-2 border-gray-800 mb-10">
             <NewsHeading nAHeading={allPost.heading} nADate={allPost.date} />
 
             <div className="p-3">
@@ -31,7 +31,11 @@ export default function Home({ allPosts }) {
               <NewsArticleSubtitle nAS={allPost.subTitle} />
 
               <ThesisPaperTitle tPT={allPost.thesisPaperTitle} />
-              <ThesisPaperLink tPL={allPost.thesisPaperLink} />
+
+              {allPost.thesisPaperLink
+              ? <ThesisPaperLink tPL={allPost.thesisPaperLink} />
+              : <></>
+              }
 
               <ThesisPaperAuthors tPA={allPost.author} />
 
@@ -42,7 +46,7 @@ export default function Home({ allPosts }) {
                   : <></>
                 }
 
-                <NewsContent nAContent={allPost.articlecontent.json}/>
+                <NewsContent nAContent={allPost.articlecontent.json} />
               </div>
             </div>
           </div>

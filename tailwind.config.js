@@ -31,7 +31,8 @@ module.exports = {
       '2xl': {'min': '1536px'},
     },
     minWidth: {
-      '200': '200px'
+      '200': '200px',
+      '520': '520px'
     },
     maxWidth: {
       '500': '500px'
