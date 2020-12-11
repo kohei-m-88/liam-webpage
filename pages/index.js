@@ -3,6 +3,7 @@ import HeaderBanner from '../components/headerBanner'
 import HeaderMenu from '../components/headerMenu'
 import RecentNews from '../components/recentNews'
 import NewsHeading from '../components/newsHeading'
+import NewsPaperSubTitle from '../components/newsPaperSubtitle'
 import ThesisPaperTitle from '../components/thesisPaperTitle'
 import ThesisPaperAuthors from '../components/thesisPaperAuthors'
 import NewsContent from '../components/newsContent'
@@ -25,6 +26,7 @@ export default function Home({ allPosts }) {
             <NewsHeading nAHeading={allPost.heading} nADate={allPost.date} />
 
             <div className="p-3">
+              <NewsArticleSubtitle />
               <ThesisPaperTitle tPT={allPost.thesisPaperTitle} />
               <ThesisPaperAuthors tPA={allPost.author} />
 
