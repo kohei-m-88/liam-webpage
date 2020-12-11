@@ -2,9 +2,9 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 export default function NewsContent({nAContent}) {
   return (
-  <>
+  <div className="py-3">
     {documentToReactComponents(nAContent)}
-  </>
+  </div>
   )
 }
 
