@@ -26,6 +26,12 @@ module.exports = {
       'xs': '576px',
       // => @media (min-width: 640px) { ... }
     },
+    minWidth: {
+      '200' : '200px'
+    },
+    maxWidth: {
+      '500' : '500px'
+    }
   },
   variants: {
     extend: {}
