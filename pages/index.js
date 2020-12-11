@@ -5,6 +5,7 @@ import RecentNews from '../components/recentNews'
 import NewsHeading from '../components/newsHeading'
 import NewsArticleSubtitle from '../components/newsArticleSubtitle'
 import ThesisPaperTitle from '../components/thesisPaperTitle'
+import ThesisPaperLink from '../components/thesisPaperLink'
 import ThesisPaperAuthors from '../components/thesisPaperAuthors'
 import NewsContent from '../components/newsContent'
 import NewsContentPic from '../components/newsContentPic'
@@ -30,6 +31,7 @@ export default function Home({ allPosts }) {
               <NewsArticleSubtitle nAS={allPost.subTitle} />
 
               <ThesisPaperTitle tPT={allPost.thesisPaperTitle} />
+              <ThesisPaperLink tPL={allPost.thesisPaperLink} />
 
               <ThesisPaperAuthors tPA={allPost.author} />
 
