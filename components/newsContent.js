@@ -1,10 +1,12 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import styles from './newsContent.module.css'
 
 export default function NewsContent({nAContent}) {
   return (
-  <div className="py-3">
+  <div className={styles.richtext}>
     {documentToReactComponents(nAContent)}
   </div>
+
   )
 }
 

@@ -28,33 +28,33 @@ export default function HeaderMenu(
       {/* right-side Menu */}
       <span>
         <button className="text-2xl p-3 hover:bg-gray-300" >
-          <a className="text-gray-800" href="https://twitter.com/liamlongo" target="_blank" rel="noopener noreferrer">
+          <a href="https://twitter.com/liamlongo" target="_blank" rel="noopener noreferrer">
             {/* si=simple icons */}
             <SiTwitter />
           </a>
         </button>
 
         <button className="text-2xl p-3 hover:bg-gray-300" >
-          <a className="text-gray-800" href="https://scholar.google.com/citations?user=e_IKMz4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+          <a href="https://scholar.google.com/citations?user=e_IKMz4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
             <SiGooglescholar />
           </a>
         </button>
 
         <button className="text-2xl p-3 hover:bg-gray-300" >
-          <a className="text-gray-800" href="https://www.linkedin.com/in/liam-longo-24068b63/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/liam-longo-24068b63/" target="_blank" rel="noopener noreferrer">
             {/* <RiLinkedinFill /> */}
             <SiLinkedin />
           </a>
         </button>
 
         <button className="text-2xl p-3 hover:bg-gray-300" >
-          <a className="text-gray-800" href="https://www.researchgate.net/profile/Liam_Longo" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.researchgate.net/profile/Liam_Longo" target="_blank" rel="noopener noreferrer">
             <SiResearchgate />
           </a>
         </button>
 
         <button className="text-2xl p-3 hover:bg-gray-300" >
-          <a className="text-gray-800" href="https://orcid.org/0000-0002-1773-0611" target="_blank" rel="noopener noreferrer">
+          <a href="https://orcid.org/0000-0002-1773-0611" target="_blank" rel="noopener noreferrer">
             <SiOrcid />
           </a>
         </button>
