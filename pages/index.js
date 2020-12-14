@@ -53,7 +53,7 @@ export default function Home({ allPosts }) {
             </div>
           </div>
         ))}
-
+        
       </div>
     </>
   )
