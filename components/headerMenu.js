@@ -1,4 +1,8 @@
+{/* si=simple icons */ }
 import { SiTwitter, SiGooglescholar, SiLinkedin, SiResearchgate, SiOrcid } from 'react-icons/si'
+import styles from './headerMenu.module.css'
+import ButtonExPage from './buttonExPage'
+import React, { useState } from 'react'
 // import { RiLinkedinFill } from 'react-icons/ri'
 
 //hoverには初期値を入れておく  参考 https://github.com/vercel/next.js/blob/canary/examples/layout-component/components/layout.js
@@ -11,54 +15,72 @@ export default function HeaderMenu(
     researchHover = 'hover:bg-gray-300',
     researchActive = '',
     cvHover = 'hover:bg-gray-300'
-  }) 
-  {
+  }) {
+
+  const [menuexpanded, setMenuexpanded] = useState(false);
+
   return (
+    <nav class={`${styles.headermenu} `}>
 
-    <nav className="flex w-full border-2 border-black justify-between items-center">
-      
-      {/* left-side Menu */}
-      <span>
-        <button className={`text-xl font-semibold p-3 ${homeHover} ${homeActive}`}>Home</button>
-        <button className={`text-xl font-semibold p-3 ${aboutMeHover} ${aboutMeActive}`}>About Me</button>
-        <button className={`text-xl font-semibold p-3 ${researchHover} ${researchActive}`}>Research</button>
-        <button className={`text-xl font-semibold p-3 ${cvHover}`}>CV</button>
-      </span>
+      <div class="flex justify-between">
+        {/* <!-- Mobile menu button--> */}
 
-      {/* right-side Menu */}
-      <span>
-        <button className="text-2xl p-3 hover:bg-gray-300" >
-          <a href="https://twitter.com/liamlongo" target="_blank" rel="noopener noreferrer">
-            {/* si=simple icons */}
+        {menuexpanded
+          ? (
+            <button onClick={() => setMenuexpanded(false)} onBlur={()=>setMenuexpanded(false)} aria-expanded="true" class="px-2 py-1 text-xl inline-flex items-center justify-center text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white sm:hidden">
+              <span class="sr-only">button to close menu</span>
+              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              <span className="pl-1" >MENU</span>
+            </button>
+          )
+          : (
+            <button onClick={() => setMenuexpanded(true)} aria-expanded="false" class="px-2 py-1 text-xl inline-flex items-center justify-center text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white sm:hidden">
+            <span class="sr-only">button to open menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <span className="pl-1" >MENU</span>
+          </button>
+          )
+        }
+
+
+        {/* right-side Menu */}
+        <span className={styles.tglro}>
+
+          <ButtonExPage exPage="https://twitter.com/liamlongo">
             <SiTwitter />
-          </a>
-        </button>
+          </ButtonExPage>
 
-        <button className="text-2xl p-3 hover:bg-gray-300" >
-          <a href="https://scholar.google.com/citations?user=e_IKMz4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+          <ButtonExPage exPage="https://scholar.google.com/citations?user=e_IKMz4AAAAJ&hl=en" >
             <SiGooglescholar />
-          </a>
-        </button>
+          </ButtonExPage>
 
-        <button className="text-2xl p-3 hover:bg-gray-300" >
-          <a href="https://www.linkedin.com/in/liam-longo-24068b63/" target="_blank" rel="noopener noreferrer">
-            {/* <RiLinkedinFill /> */}
-            <SiLinkedin />
-          </a>
-        </button>
+          <ButtonExPage exPage="https://www.linkedin.com/in/liam-longo-24068b63/">
+            <SiLinkedin /> {/* <RiLinkedinFill /> */}
+          </ButtonExPage>
 
-        <button className="text-2xl p-3 hover:bg-gray-300" >
-          <a href="https://www.researchgate.net/profile/Liam_Longo" target="_blank" rel="noopener noreferrer">
+
+          <ButtonExPage exPage="https://www.researchgate.net/profile/Liam_Longo">
             <SiResearchgate />
-          </a>
-        </button>
+          </ButtonExPage>
 
-        <button className="text-2xl p-3 hover:bg-gray-300" >
-          <a href="https://orcid.org/0000-0002-1773-0611" target="_blank" rel="noopener noreferrer">
+          <ButtonExPage exPage="https://orcid.org/0000-0002-1773-0611">
             <SiOrcid />
-          </a>
-        </button>
-      </span>
+          </ButtonExPage>
+
+        </span>
+      </div>
+
+      {/* left-side Menu */}
+      <div aria-expanded={menuexpanded} className={`flex flex-col z-10 ${styles.harc}`}>
+        <button className={`${homeHover} ${homeActive}`}>HOME</button>
+        <button className={`${aboutMeHover} ${aboutMeActive}`}>ABOUT ME</button>
+        <button className={`${researchHover} ${researchActive}`}>RESEARCH</button>
+        <button className={`${cvHover}`}>CV</button>
+      </div>
 
     </nav>
 

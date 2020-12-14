@@ -1,0 +1,45 @@
+.headermenu {
+  @apply bg-gray-500 items-center
+}
+
+.tglro {
+  outline-width: 0;
+  @apply flex
+}
+
+.harc[aria-expanded="false"] {
+  @apply hidden
+}
+
+.harc > button {
+  @apply font-medium text-xl px-2 py-1 text-left
+}
+
+.tglro > a > svg {
+  @apply text-2xl
+  /* 上下に謎の余白ができるのを回避 */
+  m-1 
+}
+
+.tglro > a {
+  @apply p-1
+}
+
+.tglro > a:hover{
+  @apply bg-gray-300 
+}
+
+@screen sm {
+  .headermenu {
+    @apply flex flex-row-reverse justify-between
+  }
+  .harc {
+    @apply flex-row
+  }
+  .harc[aria-expanded="false"]{
+    @apply block
+  }
+  .harc > button {
+    @apply text-center
+  }
+} 

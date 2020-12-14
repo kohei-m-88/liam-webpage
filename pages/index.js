@@ -1,6 +1,6 @@
-import Layout from '../components/layout'
-import HeaderBanner from '../components/headerBanner'
+import MyHead from '../components/layout'
 import HeaderMenu from '../components/headerMenu'
+import HeaderBanner from '../components/headerBanner'
 import RecentNews from '../components/recentNews'
 import NewsHeading from '../components/newsHeading'
 import NewsArticleSubtitle from '../components/newsArticleSubtitle'
@@ -10,15 +10,19 @@ import ThesisPaperAuthors from '../components/thesisPaperAuthors'
 import NewsContent from '../components/newsContent'
 import NewsContentPic from '../components/newsContentPic'
 import { getAllPostsForHome } from '../lib/api'
+import TestH from '../components/testH'
+
 
 export default function Home({ allPosts }) {
 
   return (
-    <Layout>
+    <>
+      <MyHead />
+      <TestH />
+      <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900"/>
       <HeaderBanner banner="A" />
-      <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
 
-      <div className="mx-5vw my-2vh">
+      <div className="mx-1vw sm:mx-3vw md:mx-5vw my-2vh z-20">
 
         <RecentNews />
 
@@ -33,8 +37,8 @@ export default function Home({ allPosts }) {
               <ThesisPaperTitle tPT={allPost.thesisPaperTitle} />
 
               {allPost.thesisPaperLink
-              ? <ThesisPaperLink tPL={allPost.thesisPaperLink} />
-              : <></>
+                ? <ThesisPaperLink tPL={allPost.thesisPaperLink} />
+                : <></>
               }
 
               <ThesisPaperAuthors tPA={allPost.author} />
@@ -53,8 +57,7 @@ export default function Home({ allPosts }) {
         ))}
 
       </div>
-
-    </Layout>
+    </>
   )
 }
 
