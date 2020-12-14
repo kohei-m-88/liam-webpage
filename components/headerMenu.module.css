@@ -15,18 +15,26 @@
   @apply font-medium text-xl px-2 py-1 text-left
 }
 
-.tglro > a > svg {
-  @apply text-2xl
-  /* 上下に謎の余白ができるのを回避 */
-  m-1 
-}
-
 .tglro > a {
   @apply p-1
 }
 
 .tglro > a:hover{
   @apply bg-gray-300 
+}
+
+.tglro > a > svg {
+  @apply text-2xl
+  /* 上下に謎の余白ができるのを回避 */
+  m-1 
+}
+
+.closebutton {
+  @apply  px-2 py-1 text-xl inline-flex items-center justify-center text-gray-900
+}
+
+.openbutton {
+  @apply px-2 py-1 text-xl inline-flex items-center justify-center text-gray-900 
 }
 
 @screen sm {

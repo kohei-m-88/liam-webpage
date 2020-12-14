@@ -10,7 +10,6 @@ import ThesisPaperAuthors from '../components/thesisPaperAuthors'
 import NewsContent from '../components/newsContent'
 import NewsContentPic from '../components/newsContentPic'
 import { getAllPostsForHome } from '../lib/api'
-import TestH from '../components/testH'
 
 
 export default function Home({ allPosts }) {
@@ -18,8 +17,7 @@ export default function Home({ allPosts }) {
   return (
     <>
       <MyHead />
-      <TestH />
-      <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900"/>
+      <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
       <HeaderBanner banner="A" />
 
       <div className="mx-1vw sm:mx-3vw md:mx-5vw my-2vh z-20">
