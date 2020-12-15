@@ -3,43 +3,44 @@ import { SiTwitter, SiGooglescholar, SiLinkedin, SiResearchgate, SiOrcid } from 
 import styles from './headerMenu.module.css'
 import ButtonExPage from './buttonExPage'
 import React, { useState } from 'react'
+import Link from 'next/link'
 // import { RiLinkedinFill } from 'react-icons/ri'
 
 //hoverには初期値を入れておく  参考 https://github.com/vercel/next.js/blob/canary/examples/layout-component/components/layout.js
 export default function HeaderMenu(
   {
-    homeHover = 'hover:bg-gray-300',
+    homeHover = 'hover:bg-gray-400',
     homeActive = '',
-    aboutMeHover = 'hover:bg-gray-300',
+    aboutMeHover = 'hover:bg-gray-400',
     aboutMeActive = '',
-    researchHover = 'hover:bg-gray-300',
+    researchHover = 'hover:bg-gray-400',
     researchActive = '',
-    cvHover = 'hover:bg-gray-300'
+    cvHover = 'hover:bg-gray-400'
   }) {
 
   const [menuexpanded, setMenuexpanded] = useState(false);
 
   return (
-    <nav class={`${styles.headermenu} `}>
+    <nav className={`${styles.headermenu}`}>
 
-      <div class="flex justify-between">
+      <div className="flex justify-between">
         {/* <!-- Mobile menu button--> */}
 
         {menuexpanded
           ? (
-            <button onClick={() => setMenuexpanded(false)} onBlur={() => setMenuexpanded(false)} aria-expanded="true" className={`hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white sm:hidden ${styles.openbutton}`}>
-              <span class="sr-only">button to close menu</span>
-              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            <button onClick={() => setMenuexpanded(false)} aria-expanded="true" className={`hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ${styles.openbutton}`}>
+              <span className="sr-only">button to close menu</span>
+              <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
               <span className="pl-1" >MENU</span>
             </button>
           )
           : (
-            <button onClick={() => setMenuexpanded(true)} aria-expanded="false" className={`hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white sm:hidden ${styles.closebutton}`}>
-              <span class="sr-only">button to open menu</span>
-              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <button onClick={() => setMenuexpanded(true)} aria-expanded="false" className={`hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ${styles.closebutton}`}>
+              <span className="sr-only">button to open menu</span>
+              <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
               <span className="pl-1" >MENU</span>
             </button>
@@ -76,10 +77,10 @@ export default function HeaderMenu(
 
       {/* left-side Menu */}
       <div aria-expanded={menuexpanded} className={`flex flex-col z-10 ${styles.harc}`}>
-        <button className={`${homeHover} ${homeActive}`}>HOME</button>
-        <button className={`${aboutMeHover} ${aboutMeActive}`}>ABOUT ME</button>
-        <button className={`${researchHover} ${researchActive}`}>RESEARCH</button>
-        <button className={`${cvHover}`}>CV</button>
+        <Link href="/"><a className={`${homeHover} ${homeActive}`}>HOME</a></Link>
+        <Link href="/about"><a className={`${aboutMeHover} ${aboutMeActive}`}>ABOUT ME</a></Link>
+        <Link href="/research"><a className={`${researchHover} ${researchActive}`}>RESEARCH</a></Link>
+        <ButtonExPage exPage="https://drive.google.com/file/d/1ygaWGIZrcYjjK6ZvoO9eNkpyGlOdjp51/view?usp=sharing" classname={cvHover}>CV</ButtonExPage>
       </div>
 
     </nav>

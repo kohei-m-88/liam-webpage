@@ -25,7 +25,7 @@ export default function Home({ allPosts }) {
         <RecentNews />
 
         {allPosts.map(allPost => (
-          <div className="border-solid border-2 border-gray-800 mb-10">
+          <div className="border-solid border-2 border-gray-800 mb-10" key={allPost.articleid}>
             <NewsHeading nAHeading={allPost.heading} nADate={allPost.date} />
 
             <div className="p-3">

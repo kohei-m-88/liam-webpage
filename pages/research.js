@@ -6,8 +6,8 @@ export default function research() {
   return (
     <>
       <MyHead />
-      <HeaderBanner banner="C" />
       <HeaderMenu researchHover="" researchActive="text-gray-100 bg-gray-900" />
+      <HeaderBanner banner="C" />
     </>
   )
 }

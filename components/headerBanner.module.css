@@ -1,0 +1,23 @@
+.headerbannerformob {
+  display: block;
+  padding-top: 40px;
+  width: 100%;
+  background-color: black;
+}
+
+.headerbanner {
+  display: none;
+}
+
+@screen sm {
+  .headerbannerformob {
+    display: none;
+  }
+  
+  .headerbanner {
+    display: block;
+    padding-top: 40px;
+    width: 100%;
+    background-color: black;
+  }
+}
