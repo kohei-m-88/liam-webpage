@@ -1,4 +1,4 @@
-import MyHead from '../components/layout'
+import Layout from '../components/layout'
 import HeaderMenu from '../components/headerMenu'
 import HeaderBanner from '../components/headerBanner'
 import RecentNews from '../components/recentNews'
@@ -13,10 +13,8 @@ import { getAllPostsForHome } from '../lib/api'
 
 
 export default function Home({ allPosts }) {
-
   return (
-    <>
-      <MyHead />
+    <Layout title="HOME">
       <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
       <HeaderBanner banner="A" />
 
@@ -53,9 +51,9 @@ export default function Home({ allPosts }) {
             </div>
           </div>
         ))}
-        
+
       </div>
-    </>
+    </Layout>
   )
 }
 

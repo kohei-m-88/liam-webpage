@@ -1,13 +1,16 @@
 import Head from 'next/head'
-// import Footer from "./footer"
+import Footer from './footer'
 
-export default function MyHead({ title = 'LiamLongo.org' }) {
+export default function Layout({ children, title }) {
   return (
     <>
       <Head>
-        <title>{title}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>LiamLongo.org | {title}</title>
       </Head>
+      <div className="min-h-screen">
+        {children}
+      </div>
+      <Footer />
     </>
   )
 }
