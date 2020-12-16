@@ -9,10 +9,12 @@ import ThesisPaperLink from '../components/thesisPaperLink'
 import ThesisPaperAuthors from '../components/thesisPaperAuthors'
 import NewsContent from '../components/newsContent'
 import NewsContentPic from '../components/newsContentPic'
-import { getAllPostsForHome } from '../lib/api'
+import { getAllPosts } from '../lib/api'
+import { SiApplepodcasts } from 'react-icons/si'
 
 
 export default function Home({ allPosts }) {
+
   return (
     <Layout title="HOME">
       <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
@@ -22,43 +24,46 @@ export default function Home({ allPosts }) {
 
         <RecentNews />
 
-        {allPosts.map(allPost => (
-          <div className="border-solid border-2 border-gray-800 mb-10" key={allPost.articleid}>
+        {allPosts.slice().map(allPost =>
+          <div className="mb-10" key={allPost.articleid}>
             <NewsHeading nAHeading={allPost.heading} nADate={allPost.date} />
 
-            <div className="p-3">
+            {(allPost.subTitle || allPost.thesisPaperTitle || allPost.thesisPaperLink || allPost.author || allPost.image || allPost.articlecontent)
+              ? <div className="p-3 border-solid border-2 border-gray-800">
+                  <NewsArticleSubtitle nAS={allPost.subTitle} />
 
-              <NewsArticleSubtitle nAS={allPost.subTitle} />
+                  <ThesisPaperTitle tPT={allPost.thesisPaperTitle} />
 
-              <ThesisPaperTitle tPT={allPost.thesisPaperTitle} />
+                  {allPost.thesisPaperLink
+                    ? <ThesisPaperLink tPL={allPost.thesisPaperLink} />
+                    : <></>
+                  }
 
-              {allPost.thesisPaperLink
-                ? <ThesisPaperLink tPL={allPost.thesisPaperLink} />
-                : <></>
-              }
+                  <ThesisPaperAuthors tPA={allPost.author} />
 
-              <ThesisPaperAuthors tPA={allPost.author} />
-
-              <div className="flow-root">
-
-                {allPost.image
-                  ? <NewsContentPic nAI={allPost.image?.url} />
-                  : <></>
-                }
-
-                <NewsContent nAContent={allPost.articlecontent.json} />
-              </div>
-            </div>
+                  <div className="flow-root">
+                    {allPost.image
+                      ? <NewsContentPic nAI={allPost.image.url} />
+                      : <></>
+                    }
+                    {allPost.articlecontent
+                      ? <NewsContent nAContent={allPost.articlecontent.json} />
+                      : <></>
+                    }
+                  </div>
+                </div>
+              : <></>
+            }
           </div>
-        ))}
-
+        )}
       </div>
     </Layout>
   )
 }
 
 export async function getStaticProps() {
-  const allPosts = (await getAllPostsForHome()) ?? []
+  const allPosts = (await getAllPosts()) ?? []
+  allPosts.pop()
   return {
     props: { allPosts }
   }
