@@ -10,61 +10,54 @@ import ThesisPaperAuthors from '../components/thesisPaperAuthors'
 import NewsContent from '../components/newsContent'
 import NewsContentPic from '../components/newsContentPic'
 import { getAllPosts } from '../lib/api'
-import { SiApplepodcasts } from 'react-icons/si'
 
 
 export default function Home({ allPosts }) {
-
-  return (
+    return (
     <Layout title="HOME">
-      <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
-      <HeaderBanner banner="A" />
+        < HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
+        <HeaderBanner banner="A" />
+        <div className="mx-1vw sm:mx-3vw md:mx-5vw my-2vh z-20" >
 
-      <div className="mx-1vw sm:mx-3vw md:mx-5vw my-2vh z-20">
+            <RecentNews />
 
-        <RecentNews />
+            { allPosts.slice().map(allPost =>
+                <div className="mb-10"
+                    key={allPost.articleid} >
+                    <NewsHeading nAHeading={allPost.heading} nADate={allPost.date} />
 
-        {allPosts.slice().map(allPost =>
-          <div className="mb-10" key={allPost.articleid}>
-            <NewsHeading nAHeading={allPost.heading} nADate={allPost.date} />
-
-            {(allPost.subTitle || allPost.thesisPaperTitle || allPost.thesisPaperLink || allPost.author || allPost.image || allPost.articlecontent)
-              ? <div className="p-3 border-solid border-2 border-gray-800">
-                  <NewsArticleSubtitle nAS={allPost.subTitle} />
-
-                  <ThesisPaperTitle tPT={allPost.thesisPaperTitle} />
-
-                  {allPost.thesisPaperLink
-                    ? <ThesisPaperLink tPL={allPost.thesisPaperLink} />
-                    : <></>
-                  }
-
-                  <ThesisPaperAuthors tPA={allPost.author} />
-
-                  <div className="flow-root">
-                    {allPost.image
-                      ? <NewsContentPic nAI={allPost.image.url} />
-                      : <></>
+                    { (allPost.subTitle || allPost.thesisPaperTitle || allPost.thesisPaperLink || allPost.author || allPost.image || allPost.articlecontent) 
+                        ? 
+                            <div className="p-3 border-solid border-2 border-gray-800" >
+                                <NewsArticleSubtitle nAS={allPost.subTitle} />
+                                <ThesisPaperTitle tPT={allPost.thesisPaperTitle} />
+                                { allPost.thesisPaperLink 
+                                    ?< ThesisPaperLink tPL={allPost.thesisPaperLink}/> 
+                                    : <></>
+                                }
+                                <ThesisPaperAuthors tPA={allPost.author} />
+                                <div className="flow-root" > 
+                                    { allPost.image 
+                                        ? < NewsContentPic nAI={allPost.image.url} /> : <></>
+                                    }
+                                    { allPost.articlecontent 
+                                        ? < NewsContent nAContent={allPost.articlecontent.json} />
+                                        : <></>
+                                    }
+                                </div>
+                            </div>
+                        : <></>
                     }
-                    {allPost.articlecontent
-                      ? <NewsContent nAContent={allPost.articlecontent.json} />
-                      : <></>
-                    }
-                  </div>
                 </div>
-              : <></>
-            }
-          </div>
-        )}
-      </div>
+            )} 
+        </div> 
     </Layout>
-  )
+    )
 }
 
 export async function getStaticProps() {
-  const allPosts = (await getAllPosts()) ?? []
-  allPosts.pop()
-  return {
-    props: { allPosts }
-  }
+    const allPosts = (await getAllPosts()) ?? []
+    return { 
+        props: {allPosts}
+    }
 }

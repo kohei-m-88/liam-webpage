@@ -1,6 +1,6 @@
 import format from 'date-fns/format'
 
-export default function NewsHeading( { nAHeading, nADate } ) {
+export default function NewsHeading({ nAHeading, nADate }) {
   return (
     <div className="px-3 py-2 flex justify-between 
     bg-gray-800 text-white  
