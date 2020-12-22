@@ -26,6 +26,7 @@ export default function Home({ allPosts }) {
                     key={allPost.articleid} >
                     <NewsHeading nAHeading={allPost.heading} nADate={allPost.date} />
 
+                    {/* タイトル以外に内容がないときに入れ物ごと表示しないif分岐 */}
                     { (allPost.subTitle || allPost.thesisPaperTitle || allPost.thesisPaperLink || allPost.author || allPost.image || allPost.articlecontent) 
                         ? 
                             <div className="p-3 border-solid border-2 border-gray-800" >

@@ -29,9 +29,3 @@
     @apply text-2xl
   }
 }
-
-@screen xl{
-  .richtext p {
-    @apply text-3xl
-  }
-}
