@@ -14,18 +14,18 @@
 
 @screen sm {
   .richtext p {
-    @apply text-base
+    @apply text-sm
   }
 }
 
 @screen md{
   .richtext p {
-    @apply text-xl
+    @apply text-base
   }
 }
 
 @screen lg{
   .richtext p {
-    @apply text-2xl
+    @apply text-xl
   }
 }

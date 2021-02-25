@@ -15,7 +15,7 @@ import { getAllPosts } from '../lib/api'
 export default function Home({ allPosts }) {
     return (
     <Layout title="HOME">
-        < HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
+        <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
         <HeaderBanner banner="A" />
         <div className="mx-1vw sm:mx-3vw md:mx-5vw my-2vh z-20" >
 
