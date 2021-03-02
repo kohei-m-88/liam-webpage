@@ -24,10 +24,9 @@ module.exports = {
     },
     minWidth: {
       '200': '200px',
-      '520': '520px'
     },
     maxWidth: {
-      '500': '500px'
+      '350': '350px'
     }
   },
   variants: {

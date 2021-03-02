@@ -80,7 +80,7 @@ export default function HeaderMenu(
         <Link href="/"><a className={`${homeHover} ${homeActive}`}>HOME</a></Link>
         <Link href="/about"><a className={`${aboutMeHover} ${aboutMeActive}`}>ABOUT ME</a></Link>
         <Link href="/research"><a className={`${researchHover} ${researchActive}`}>RESEARCH</a></Link>
-        <ButtonExPage exPage="https://drive.google.com/file/d/1ygaWGIZrcYjjK6ZvoO9eNkpyGlOdjp51/view?usp=sharing" classname={cvHover}>CV</ButtonExPage>
+        <ButtonExPage exPage="https://drive.google.com/file/d/1BjN5hmovZtOnWawgglyp4txqQDEQxqki/view?usp=sharing" classname={cvHover}>CV</ButtonExPage>
       </div>
 
     </nav>
