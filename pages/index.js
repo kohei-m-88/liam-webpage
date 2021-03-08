@@ -23,31 +23,29 @@ export default function Home({ allPosts }) {
 
             { allPosts.slice().map(allPost =>
                 <div className="mb-10"
-                    key={allPost.articleid} >
+                    key={allPost.slug} >
                     <NewsHeading nAHeading={allPost.heading} nADate={allPost.date} />
 
                     {/* タイトル以外に内容がないときに入れ物ごと表示しないif分岐 */}
                     { (allPost.subTitle || allPost.thesisPaperTitle || allPost.thesisPaperLink || allPost.author || allPost.image || allPost.articlecontent) 
-                        ? 
+                        && 
                             <div className="p-3 border-solid border-2 border-gray-800" >
                                 <NewsArticleSubtitle nAS={allPost.subTitle} />
                                 <ThesisPaperTitle tPT={allPost.thesisPaperTitle} />
                                 { allPost.thesisPaperLink 
-                                    ?< ThesisPaperLink tPL={allPost.thesisPaperLink}/> 
-                                    : <></>
+                                    && < ThesisPaperLink tPL={allPost.thesisPaperLink}/> 
                                 }
                                 <ThesisPaperAuthors tPA={allPost.author} />
                                 <div className="flow-root" > 
                                     { allPost.image 
-                                        ? < NewsContentPic nAI={allPost.image.url} /> : <></>
+                                        && < NewsContentPic nAI={allPost.image.url} />
                                     }
                                     { allPost.articlecontent 
-                                        ? < NewsContent nAContent={allPost.articlecontent.json} />
-                                        : <></>
+                                        && < NewsContent nAContent={allPost.articlecontent.json} />
+                                        
                                     }
                                 </div>
                             </div>
-                        : <></>
                     }
                 </div>
             )} 

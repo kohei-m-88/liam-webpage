@@ -16,7 +16,7 @@ export default function about({ bioPost }) {
                 <div className="mb-10" >
                     <NewsHeading nAHeading={bioPost.heading} nADate={bioPost.date} />
                     <div className="p-3 border-solid border-2 border-gray-800  flow-root" >
-                        <NewsContentPic nAI={bioPost.image?.url} />
+                        {bioPost.image?.url && <NewsContentPic nAI={bioPost.image?.url} />}
                         <NewsContent nAContent={bioPost.articlecontent?.json} />
                     </div>
                 </div>
