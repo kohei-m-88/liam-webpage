@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import Layout from "../../components/layout";
 import HeaderMenu from "../../components/headerMenu";
 import HeaderBanner from "../../components/headerBanner";
@@ -11,15 +12,18 @@ import NewsContent from "../../components/newsContent";
 import NewsContentPic from "../../components/newsContentPic";
 import { getAllPostsWithSlug } from "../../lib/api";
 import { getAPost } from "../../lib/api";
+import { Loading } from '../../components/loading';
 
 export default function Posts({ aPost }){
+  const router = useRouter()
+
   return (
     <>
       <Layout title={aPost.heading}>
         <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
         <HeaderBanner banner="A" />
         <div className="mx-1vw sm:mx-3vw md:mx-5vw my-2vh z-20">
-          <RecentNews />
+          {router.isFallback ? <Loading /> : <RecentNews /> }
           <div className="mb-10" key={aPost.slug}>
             <NewsHeading nAHeading={aPost.heading} nADate={aPost.date} />
 
@@ -59,7 +63,7 @@ export async function getStaticPaths() {
   }));
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
