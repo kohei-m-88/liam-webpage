@@ -1,3 +1,5 @@
+import { getPreviewPostBySlug } from "../../lib/api"
+
 export default async function preview(req, res){
   // Check that the secret matches and that the slug parameter exists (if not, the request should fail).
   if ((req.query.secret !== process.env.CONTENTFUL_PREVIEW_SECRET) || !req.query.slug) {
