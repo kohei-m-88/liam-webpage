@@ -6,8 +6,8 @@ export function PreviewMode() {
           Preview Mode
         </p>
         <a
-          href="/api/exit-preview"
-          className="underline hover:text-cyan duration-200 transition-colors"
+          href="/api/exitPreview"
+          className="my-1 py-1 font-medium text-sm sm:text-base md:text-xl lg:text-2xlunderline hover:text-cyan duration-200 transition-colors"
         >
           EXIT PREVIEW MODE
         </a>
