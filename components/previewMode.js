@@ -5,12 +5,13 @@ export function PreviewMode() {
         <p className="m-1 py-1 text-red-600 font-medium text-sm sm:text-base md:text-xl lg:text-2xl">
           Preview Mode
         </p>
+        <span>
         <a
           href="/api/exitPreview"
           className="m-1 py-1 text-green-400 hover:text-cyan font-medium text-sm sm:text-base md:text-xl lg:text-2xl  duration-200 transition-colors"
         >
           EXIT PREVIEW MODE
-        </a>
+        </a>←Click</span>
       </div>
     </>
   );
