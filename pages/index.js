@@ -52,8 +52,8 @@ export default function Home({ allPosts }) {
   );
 }
 
-export async function getStaticProps() {
-  const allPosts = (await getAllPosts()) ?? [];
+export async function getStaticProps({preview = false}) {
+  const allPosts = (await getAllPosts(preview)) ?? [];
   return {
     props: { allPosts },
   };

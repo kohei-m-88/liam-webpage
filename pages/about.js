@@ -25,8 +25,8 @@ export default function about({ bioPost }) {
   );
 }
 
-export async function getStaticProps() {
-  const bioPost = (await getBioPost()) ?? {};
+export async function getStaticProps({preview = false}) {
+  const bioPost = (await getBioPost(preview)) ?? {};
   return {
     props: { bioPost },
   };

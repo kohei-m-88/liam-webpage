@@ -63,8 +63,8 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps( { params } ) {
-  const aPost = await getAPost(params.slug);
+export async function getStaticProps( { params, preview = false } ) {
+  const aPost = await getAPost(params.slug, preview);
   return {
     props: { aPost },
   };
