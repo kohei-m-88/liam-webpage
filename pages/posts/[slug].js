@@ -16,6 +16,9 @@ import { Loading } from '../../components/loading';
 
 export default function Posts({ aPost }){
   const router = useRouter()
+  if (router.isFallback) {
+    return <Loading />
+  }
 
   return (
     <>
@@ -23,7 +26,7 @@ export default function Posts({ aPost }){
         <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
         <HeaderBanner banner="A" />
         <div className="mx-1vw sm:mx-3vw md:mx-5vw my-2vh z-20">
-          {router.isFallback ? <Loading /> : <RecentNews /> }
+          <RecentNews />
           <div className="mb-10" key={aPost.slug}>
             <NewsHeading nAHeading={aPost.heading} nADate={aPost.date} />
 
