@@ -2,7 +2,7 @@ export function PreviewMode() {
   return (
     <>
       <div className="flex justify-center">
-        <p className="my-1 py-1 text-red-800 font-medium text-sm sm:text-base md:text-xl lg:text-2xl">
+        <p className="my-1 py-1 text-red-600 font-medium text-sm sm:text-base md:text-xl lg:text-2xl">
           Preview Mode
         </p>
         <a
