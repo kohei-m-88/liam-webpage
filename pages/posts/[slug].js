@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import Layout from "../../components/layout";
 import HeaderMenu from "../../components/headerMenu";
 import HeaderBanner from "../../components/headerBanner";
+import { PreviewMode } from '../../components/previewMode';
 import RecentNews from "../../components/recentNews";
 import NewsHeading from "../../components/newsHeading";
 import NewsArticleSubtitle from "../../components/newsArticleSubtitle";
@@ -13,7 +14,6 @@ import NewsContentPic from "../../components/newsContentPic";
 import { getAllPostsWithSlug } from "../../lib/api";
 import { getAPost } from "../../lib/api";
 import { Loading } from '../../components/loading';
-import { PreviewMode } from '../../components/previewMode';
 
 export default function Posts({ aPost, preview }){
   const router = useRouter()

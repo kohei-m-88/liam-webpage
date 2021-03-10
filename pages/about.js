@@ -1,16 +1,18 @@
 import HeaderBanner from "../components/headerBanner";
 import HeaderMenu from "../components/headerMenu";
+import { PreviewMode } from "../components/previewMode";
 import Layout from "../components/layout";
 import NewsHeading from "../components/newsHeading";
 import NewsContentPic from "../components/newsContentPic";
 import NewsContent from "../components/newsContent";
 import { getBioPost } from "../lib/api";
 
-export default function about({ bioPost }) {
+export default function about({ bioPost, preview }) {
   return (
     <Layout title="ABOUT ME">
       <HeaderMenu aboutMeHover="" aboutMeActive="text-gray-100 bg-gray-900" />
       <HeaderBanner banner="B" />
+      {preview && <PreviewMode />}
 
       <div className="mx-1vw sm:mx-3vw md:mx-5vw my-2vh z-20">
         <div className="mb-10">
@@ -28,6 +30,6 @@ export default function about({ bioPost }) {
 export async function getStaticProps({preview = false}) {
   const bioPost = (await getBioPost(preview)) ?? {};
   return {
-    props: { bioPost },
+    props: { preview, bioPost },
   };
 }

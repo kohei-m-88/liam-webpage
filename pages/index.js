@@ -1,6 +1,7 @@
 import Layout from "../components/layout";
 import HeaderMenu from "../components/headerMenu";
 import HeaderBanner from "../components/headerBanner";
+import { PreviewMode } from "../components/previewMode";
 import RecentNews from "../components/recentNews";
 import NewsHeading from "../components/newsHeading";
 import NewsArticleSubtitle from "../components/newsArticleSubtitle";
@@ -11,12 +12,13 @@ import NewsContent from "../components/newsContent";
 import NewsContentPic from "../components/newsContentPic";
 import { getAllPosts } from "../lib/api";
 
-export default function Home({ allPosts }) {
+export default function Home({ allPosts, preview }) {
   return (
     <Layout title="HOME">
       <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
       <HeaderBanner banner="A" />
       <div className="mx-1vw sm:mx-3vw md:mx-5vw my-2vh z-20">
+        {preview && <PreviewMode />}
         <RecentNews />
 
         {allPosts.slice().map((allPost) => (
@@ -55,6 +57,6 @@ export default function Home({ allPosts }) {
 export async function getStaticProps({preview = false}) {
   const allPosts = (await getAllPosts(preview)) ?? [];
   return {
-    props: { allPosts },
+    props: { preview, allPosts },
   };
 }
