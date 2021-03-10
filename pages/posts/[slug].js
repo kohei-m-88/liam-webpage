@@ -14,7 +14,7 @@ import { getAllPostsWithSlug } from "../../lib/api";
 import { getAPost } from "../../lib/api";
 import { Loading } from '../../components/loading';
 
-export default function Posts({ aPost }){
+export default function Posts({ aPost, preview }){
   const router = useRouter()
   if (router.isFallback) {
     return <Loading />
@@ -26,6 +26,7 @@ export default function Posts({ aPost }){
         <HeaderMenu />
         <HeaderBanner banner="A" />
         <div className="mx-1vw sm:mx-3vw md:mx-5vw my-2vh z-20">
+          {preview && <p>プレビューモードです</p>}
           <RecentNews />
           <div className="mb-10" key={aPost.slug}>
             <NewsHeading nAHeading={aPost.heading} nADate={aPost.date} />
@@ -73,6 +74,6 @@ export async function getStaticPaths() {
 export async function getStaticProps( { params, preview = false } ) {
   const aPost = await getAPost(params.slug, preview);
   return {
-    props: { aPost },
+    props: { preview, aPost },
   };
 }
