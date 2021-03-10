@@ -23,7 +23,7 @@ export default function Posts({ aPost }){
   return (
     <>
       <Layout title={aPost.heading}>
-        <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
+        <HeaderMenu />
         <HeaderBanner banner="A" />
         <div className="mx-1vw sm:mx-3vw md:mx-5vw my-2vh z-20">
           <RecentNews />
