@@ -6,10 +6,15 @@ import NewsHeading from "../components/newsHeading";
 import NewsContentPic from "../components/newsContentPic";
 import NewsContent from "../components/newsContent";
 import { getBioPost } from "../lib/api";
+import { PageSeo } from "../components/seo";
 
 export default function about({ bioPost, preview }) {
   return (
-    <Layout title="ABOUT ME">
+    <PageSeo
+      p_title="about me"
+      p_url={`${siteMetadata.siteUrl}/about`}
+    />
+    <Layout>
       <HeaderMenu aboutMeHover="" aboutMeActive="text-gray-100 bg-gray-900" />
       <HeaderBanner banner="B" />
       {preview && <PreviewMode />}

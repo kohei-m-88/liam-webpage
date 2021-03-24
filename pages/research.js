@@ -3,15 +3,23 @@ import HeaderBanner from '../components/headerBanner'
 import HeaderMenu from '../components/headerMenu'
 import { PreviewMode } from "../components/previewMode";
 import { getBioPost } from '../lib/api';
+import { PageSeo } from '../components/seo';
 
 export default function research({preview}) {
   return (
-    <Layout title="RESEARCH">
+    <>
+    <PageSeo
+      p_title="Research"
+      p_description=""
+      p_url={`${siteMetadata.siteUrl}/research`}
+    />
+    <Layout>
       <HeaderMenu researchHover="" researchActive="text-gray-100 bg-gray-900" />
       <HeaderBanner banner="C" />
       {preview && <PreviewMode />}
       <p className="object-center text-2xl p-5 m-5">Coming soon</p>
     </Layout>
+    </>
   )
 }
 

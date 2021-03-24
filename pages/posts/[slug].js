@@ -14,6 +14,7 @@ import NewsContentPic from "../../components/newsContentPic";
 import { getAllPostsWithSlug } from "../../lib/api";
 import { getAPost } from "../../lib/api";
 import { Loading } from '../../components/loading';
+import { PageSeo } from '../../components/seo';
 
 export default function Posts({ aPost, preview }){
   const router = useRouter()
@@ -23,6 +24,10 @@ export default function Posts({ aPost, preview }){
 
   return (
     <>
+      <PageSeo
+        p_title={aPost.heading}
+        p_url={`${siteMetadata.siteUrl}/${aPost.slug}`}
+      />
       <Layout title={aPost.heading}>
         <HeaderMenu />
         <HeaderBanner banner="A" />

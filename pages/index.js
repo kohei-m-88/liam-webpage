@@ -11,10 +11,17 @@ import ThesisPaperAuthors from "../components/thesisPaperAuthors";
 import NewsContent from "../components/newsContent";
 import NewsContentPic from "../components/newsContentPic";
 import { getAllPosts } from "../lib/api";
+import { PageSeo } from "../components/seo";
+import siteMetadata from '../data/siteMetadata'
 
 export default function Home({ allPosts, preview }) {
   return (
-    <Layout title="HOME">
+    <>
+    <PageSeo
+      p_description={siteMetadata.description}
+      p_url={siteMetadata.siteUrl}
+    />
+    <Layout>
       <HeaderMenu homeHover="" homeActive="text-gray-100 bg-gray-900" />
       <HeaderBanner banner="A" />
       <div className="mx-1vw sm:mx-3vw md:mx-5vw my-2vh z-20">
@@ -51,6 +58,7 @@ export default function Home({ allPosts, preview }) {
         ))}
       </div>
     </Layout>
+    </>
   );
 }
 

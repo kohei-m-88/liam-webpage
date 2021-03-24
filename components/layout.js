@@ -5,9 +5,6 @@ import styles from './layout.module.css'
 export default function Layout({ children, title }) {
   return (
     <>
-      <Head>
-        <title>LiamLongo.org | {title}</title>
-      </Head>
       <div className={styles.html}>
         <div className={styles.body}>
           <div className={styles.content}>
