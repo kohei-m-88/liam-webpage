@@ -15,6 +15,7 @@ import { getAllPostsWithSlug } from "../../lib/api";
 import { getAPost } from "../../lib/api";
 import { Loading } from '../../components/loading';
 import { PageSeo } from '../../components/seo';
+import siteMetadata from '../../data/siteMetadata'
 
 export default function Posts({ aPost, preview }){
   const router = useRouter()

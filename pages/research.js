@@ -4,6 +4,7 @@ import HeaderMenu from '../components/headerMenu'
 import { PreviewMode } from "../components/previewMode";
 import { getBioPost } from '../lib/api';
 import { PageSeo } from '../components/seo';
+import siteMetadata from '../data/siteMetadata'
 
 export default function research({preview}) {
   return (

@@ -7,6 +7,7 @@ import NewsContentPic from "../components/newsContentPic";
 import NewsContent from "../components/newsContent";
 import { getBioPost } from "../lib/api";
 import { PageSeo } from "../components/seo";
+import siteMetadata from "../data/siteMetadata"
 
 export default function about({ bioPost, preview }) {
   return (

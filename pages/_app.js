@@ -1,5 +1,6 @@
 import { DefaultSeo } from 'next-seo'
 import { SEO } from '../components/seo'
+import Head from 'next/head'
 import '../styles/globals.css'
 
 
